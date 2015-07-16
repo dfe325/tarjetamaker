@@ -28,6 +28,8 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  #***added via http://stackoverflow.com/questions/16271696/cant-get-css-working-on-heroku-using-rails-4-with-bootstrap-sass-gem
+  config.serve_static_assets = true
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
