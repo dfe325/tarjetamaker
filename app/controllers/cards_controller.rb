@@ -2,7 +2,6 @@ class CardsController < ApplicationController
   # look into before actions for authentication
   def index
     @card = Card.all.first
-    @cards = Card.all
   end
 
   def show
