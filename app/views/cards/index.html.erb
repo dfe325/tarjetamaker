@@ -11,7 +11,7 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'Tap to flip card', cards_path(@card) %></ul>
+    <ul><%= link_to 'New Card', cards_path(@next) %></ul>
 
     <ul> <%= content_tag(:strong,'New Card') %> </ul>
 
@@ -20,14 +20,14 @@
 
 <div id="box-container">
 
-<br> <br> <%= button_tag(type: 'button') do %>
+    <br> <br> <%= button_tag(type: 'button') do %>
 
-<h1 style="color:yellow"> <%= @card.word_text %>
+    <h1 style="color:yellow"> <%= @card.word_text %>
 
-<ul><%= link_to 'Tap to flip card', card_path(@card) %></ul>
+    <ul><%= link_to 'Tap to flip card', card_path(@card) %></ul>
 
-<ul> <%= content_tag(:strong,'Tap to flip the card') %> </ul>
+    <ul> <%= content_tag(:strong,'Tap to flip the card') %> </ul>
 
-<% end %></h1>
+    <% end %></h1>
 
 </div>

@@ -1,7 +1,10 @@
 class CardsController < ApplicationController
   # look into before actions for authentication
   def index
+    # if params[:link] == ""   
     @card = Card.all.first
+    @cards = Card.all
+    @next = Card.last
   end
 
   def show
@@ -32,6 +35,10 @@ class CardsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def edit
+
   end
 
   def update
