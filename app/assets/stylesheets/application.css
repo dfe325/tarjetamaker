@@ -15,3 +15,26 @@
  *= require foundation_and_overrides
 
  */
+
+ body {
+  background-color: #8B0000;
+  color: yellow;
+  font: small-caps 500 15px /1.5 courier;
+}
+
+h1, h2, h3 {
+  color: #D3E900;
+  font-family: Orbitron;
+}
+
+.top-bar .top_bar_button {
+   background-color: #B8860B;
+}
+
+#box-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+};
