@@ -1,0 +1,38 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/foundation_and_overrides.scss">
+</head>
+
+<div id="front_page_container" class="medium-8 medium-centered text-center columns">
+
+  <div class="row">
+  </div>
+</div>
+
+<br> <br> <%= button_tag(type: 'button') do %>
+<ul> <%= content_tag(:strong,'New Card') %> </ul>
+<% end %>
+
+
+<div id="box-container">
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+<h1 style="color:yellow"> <%= @card.meaning_text %>
+
+<ul> <%= content_tag(:strong,'Go Back') %> </ul>
+
+<ul><%= link_to 'Go Back', cards_path %></ul>
+
+
+<% end %></h1>
+
+</div>
+
+
+
+
+
+<!-- local variable
+
+make the link a post request  -->

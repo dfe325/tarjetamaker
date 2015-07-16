@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'railties', '~> 4.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -39,14 +39,25 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+
 end
 
-
+gem 'pry-rails', group: [:development, :test]
 gem 'rspec-rails', group: [:development, :test]
 gem 'capybara', group: [:development, :test]
 gem 'launchy', group: [:development, :test]
-gem 'factory_girl', group: [:development, :test]
 gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails'
+gem 'factory_girl_rails', group: [:development, :test]
+gem "rb-readline", group: [:development, :test], :require => false
+
+ruby '2.0.0'
+
+
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
+end
