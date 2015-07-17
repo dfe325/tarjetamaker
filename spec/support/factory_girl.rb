@@ -7,4 +7,10 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :card do
+    word_text: "el perro"
+    meaning_text: "the dog"
+    user
+  end
+
 end
