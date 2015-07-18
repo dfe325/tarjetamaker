@@ -1,7 +1,6 @@
 class CardsController < ApplicationController
   # look into before actions for authentication
   def index
-    # if params[:link] == ""   
     @card = Card.all.first
     @cards = Card.all
     @next = Card.last
