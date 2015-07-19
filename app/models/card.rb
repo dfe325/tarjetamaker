@@ -3,4 +3,5 @@ class Card < ActiveRecord::Base
 
   validates :word_text, presence: true
   validates :meaning_text, presence: true
+  validates :user_id, presence: true
 end
