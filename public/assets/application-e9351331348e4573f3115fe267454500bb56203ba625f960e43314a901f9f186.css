@@ -7,8 +7,10 @@
      height: 0;
      }
 .clearfix { display: inline-block; }
+/* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
+/* close commented backslash hack */
 
  body {
   background-color: #8B0000;
@@ -30,21 +32,17 @@
     margin: 0;
   }
 
-  .top-bar .top_bar_button {
-    padding-bottom: 50px;
-    background-color: #B8860B;
-  }
+.top-bar .top_bar_button {
+  padding-bottom: 50px;
+  background-color: #B8860B;
+}
 
-  #search_form {
-    width: 50%;
-   }
-
-  #box-container {
-    height: 75%; width: 125px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-    padding-top: 100px;
-  };
+#box-container {
+  height: 75%; width: 125px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  padding-top: 100px;
+};
