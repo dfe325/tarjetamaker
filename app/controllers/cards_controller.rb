@@ -18,6 +18,7 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     respond_to do |format|
       if @card.save
+        flash[:notice] = 'Card was successfully created.'
         format.html { redirect_to '/cards', notice: 'Card was successfully created.' }
         format.json { render :show, status: :created, location: @card }
       else
@@ -41,13 +42,13 @@ class CardsController < ApplicationController
   end
 
   def update
-    # @card = Card.find(params[:post_id])
-    # @comment = Comment.find(params[:id])
-    # if @comment.update_attributes(params[:comment])
-    #   redirect_to post_comment_url(@card, @comment)
-    # else
-    #   render :action => "edit"
-    # end
+    @card = Card.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    if @comment.update_attributes(params[:comment])
+      redirect_to post_comment_url(@card, @comment)
+    else
+      render :action => "edit"
+    end
   end
 
   private

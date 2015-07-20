@@ -1,24 +1,20 @@
 
 <%= form_for @card, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
 
+
+
        <label for="spanish">
          Spanish
        </label>
-       <input id="spanish" name= "spanish" type="text"/>
+       <ul> <input id="spanish" name= "spanish" type="text"/> </ul>
 
-      <ul> <%= f.text_field :word_text %> </ul>
-
-       <%= f.label :english %>
 
        <label for="english">
          English
        </label>
-       <input id="english" name= "english" type="text"/>
+       <ul> <input id="english" name= "english" type="text"/> </ul>
 
-      <ul> <%= f.text_field :meaning_text %> </ul>
+
 
     <%= f.submit "Create" %>
 <% end %>
-
-
-    <%= link_to "Back to Home", cards_path, class: "button radius small edit_form_button"%>
