@@ -10,8 +10,15 @@
 </div>
 
 <br> <br> <%= button_tag(type: 'button') do %>
+
+<ul><%= link_to 'New Card', cards_path(@next) %></ul>
+
 <ul> <%= content_tag(:strong,'New Card') %> </ul>
 <% end %>
+
+
+
+
 
 
 <div id="box-container">
@@ -19,8 +26,6 @@
 <br> <br> <%= button_tag(type: 'button') do %>
 
 <h1 style="color:yellow"> <%= @card.meaning_text %>
-
-<ul> <%= content_tag(:strong,'Go Back') %> </ul>
 
 <ul><%= link_to 'Go Back', :back %></ul>
 
