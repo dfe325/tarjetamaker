@@ -8,8 +8,8 @@ FactoryGirl.define do
   end
 
   factory :card do
-    word_text: "el perro"
-    meaning_text: "the dog"
+    word_text "el perro"
+    meaning_text "the dog"
     user
   end
 
