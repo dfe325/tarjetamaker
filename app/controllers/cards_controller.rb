@@ -16,8 +16,9 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-      if @card.save
-        redirect_to @card, alert: "User created successfully."
+    # binding.pry
+      if @card.save!
+        redirect_to @card, alert: "Card created successfully."
       else
         redirect_to new_card_path, alert: "Error creating card."
       end
@@ -31,10 +32,6 @@ class CardsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
-  end
-
-  def edit
-
   end
 
   def update

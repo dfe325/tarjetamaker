@@ -1,3 +1,16 @@
+
+<% if user_signed_in? %>
+
+<div id="form_errors">
+  <% if @card.errors.any? %>
+    <ul>
+      <% @card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <%end%>
+</div>
+
 <%= form_for @card do |f| %>
        <%= f.label :word_text %>
        <%= f.text_field :word_text %>
@@ -6,4 +19,6 @@
       <%= f.text_field :meaning_text %>
 
     <%= f.submit "Create" %>
+<% end %>
+
 <% end %>
