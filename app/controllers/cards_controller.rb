@@ -15,11 +15,22 @@ class CardsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     @card = Card.new(card_params.merge(user_id: current_user.id))
     if @card.save
         redirect_to @card, alert: "Card created successfully."
     else
         redirect_to new_card_path, alert: "Error creating card."
+=======
+    @card = Card.new(params[:card].merge(user_id: current_user.id))
+    respond_to do |format|
+      if @card.save
+        format.html { redirect_to '/cards', notice: 'Card was successfully created.' }
+        format.json { render :show, status: :created, location: @card }
+      else
+        format.html { render :new }
+      end
+>>>>>>> master
     end
   end
 
