@@ -1,20 +1,9 @@
+<%= form_for @card do |f| %>
+       <%= f.label :word_text %>
+       <%= f.text_field :word_text %>
 
-<%= form_for @card, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-
-
-
-       <label for="spanish">
-         Spanish
-       </label>
-       <ul> <input id="spanish" name= "spanish" type="text"/> </ul>
-
-
-       <label for="english">
-         English
-       </label>
-       <ul> <input id="english" name= "english" type="text"/> </ul>
-
-
+      <%= f.label :meaning_text %>
+      <%= f.text_field :meaning_text %>
 
     <%= f.submit "Create" %>
 <% end %>

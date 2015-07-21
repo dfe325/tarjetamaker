@@ -11,10 +11,12 @@ feature 'user adds new card', %Q{
 
     visit 'cards/new'
 
-    expect(page).to have_content'Spanish'
+    expect(page).to have_content'Word text'
+    expect(page).to have_content'Meaning text'
 
-    fill_in 'Spanish', with: 'la llave'
-    fill_in 'English', with: 'the key'
+    # save_and_open_page
+    fill_in 'Word text', with: 'hola'
+    fill_in 'Meaning text', with: 'hello'
 
     click_button 'Create'
 

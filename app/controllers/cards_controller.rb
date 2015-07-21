@@ -16,15 +16,11 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-    respond_to do |format|
       if @card.save
-        flash[:notice] = 'Card was successfully created.'
-        format.html { redirect_to '/cards', notice: 'Card was successfully created.' }
-        format.json { render :show, status: :created, location: @card }
+        redirect_to @card, alert: "User created successfully."
       else
-        format.html { render :new }
+        redirect_to new_card_path, alert: "Error creating card."
       end
-    end
   end
 
   def destroy
