@@ -15,6 +15,13 @@ class CardsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
+    @card = Card.new(card_params.merge(user_id: current_user.id))
+    if @card.save
+        redirect_to @card, alert: "Card created successfully."
+    else
+        redirect_to new_card_path, alert: "Error creating card."
+=======
     @card = Card.new(params[:card].merge(user_id: current_user.id))
     respond_to do |format|
       if @card.save
@@ -23,6 +30,7 @@ class CardsController < ApplicationController
       else
         format.html { render :new }
       end
+>>>>>>> master
     end
   end
 
@@ -36,19 +44,15 @@ class CardsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
-  def update
-    # @card = Card.find(params[:post_id])
-    # @comment = Comment.find(params[:id])
-    # if @comment.update_attributes(params[:comment])
-    #   redirect_to post_comment_url(@card, @comment)
-    # else
-    #   render :action => "edit"
-    # end
-  end
+  # def update
+  #   # @card = Card.find(params[:post_id])
+  #   # @comment = Comment.find(params[:id])
+  #   # if @comment.update_attributes(params[:comment])
+  #   #   redirect_to post_comment_url(@card, @comment)
+  #   # else
+  #   #   render :action => "edit"
+  #   # end
+  # end
 
   private
 
@@ -59,5 +63,4 @@ class CardsController < ApplicationController
   def card_params
     params.require(:card).permit(:word_text, :meaning_text)
   end
-
 end
