@@ -15,7 +15,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = Card.new(params[:card].merge(user_id: current_user.id))
     respond_to do |format|
       if @card.save
         format.html { redirect_to '/cards', notice: 'Card was successfully created.' }
