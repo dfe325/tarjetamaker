@@ -15,13 +15,13 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = Card.create(params[:card].merge(user_id: current_user.id)
     # binding.pry
-      if @card.save!
+     if @card.save!
         redirect_to @card, alert: "Card created successfully."
       else
         redirect_to new_card_path, alert: "Error creating card."
-      end
+     end
   end
 
   def destroy
