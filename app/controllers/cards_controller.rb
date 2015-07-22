@@ -1,9 +1,13 @@
 class CardsController < ApplicationController
   # look into before actions for authentication
   def index
-    @card = Card.all.first
-    @cards = Card.all
-    @next = Card.last
+    @cards = []
+    @cards << Card.all
+    @cards = @cards.flatten
+    binding.pry
+    @card = @cards.flatten.first
+    @next = @cards.shift.second
+    binding.pry
   end
 
   def show
@@ -16,6 +20,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params.merge(user_id: current_user.id))
+    @card.user = current_user
     if @card.save
         redirect_to @card, alert: "Card created successfully."
     else
@@ -25,8 +30,8 @@ class CardsController < ApplicationController
 
   def destroy
     @card = Card.find(params[:id])
-    @card.destroy
 
+    @card.destroy
     flash[:notice] = "Card deleted"
   end
 

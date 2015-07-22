@@ -4,7 +4,6 @@
 </head>
 
 <div class="medium-6 medium-centered columns float right">
-    <%= image_tag "search.jpg" , style: "height:500%;"%>
   </div>
 
 <div id="front_page_container" class="medium-8 medium-centered text-center columns">
@@ -15,8 +14,7 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'New Card', cards_path(@next) %></ul>
-
+    <ul><%= link_to 'New Card', cards_path(@card.next) %></ul>
     <ul> <%= content_tag(:strong,'New Card') %> </ul>
 
 <% end %>
