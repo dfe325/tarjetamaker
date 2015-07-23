@@ -1,9 +1,13 @@
 class CardsController < ApplicationController
   # look into before actions for authentication
   def index
-    @card = Card.all.first
+    # @card = Card.all.first
+    # @cards = Card.all
+    # @next = Card.last
     @cards = Card.all
-    @next = Card.last
+    @card = Card.all.first
+
+
   end
 
   def show

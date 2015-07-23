@@ -14,7 +14,7 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'New Card', cards_path(@next) %></ul>
+    <ul><%= link_to 'New Card', cards_path(@card.next) %></ul>
 
     <ul> <%= content_tag(:strong,'New Card') %> </ul>
 
@@ -34,3 +34,11 @@
     <% end %></h1>
 
 </div>
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+    <ul><%= link_to 'Delete Card', cards_path(@card.delete) %></ul>
+
+    <ul> <%= content_tag(:strong,'Delete Card') %> </ul>
+
+<% end %>
