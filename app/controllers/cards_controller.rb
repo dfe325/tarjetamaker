@@ -7,7 +7,6 @@ class CardsController < ApplicationController
     @cards = Card.all
     @card = Card.all.first
 
-
   end
 
   def show
