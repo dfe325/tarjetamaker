@@ -1,12 +1,14 @@
 class CardsController < ApplicationController
   # look into before actions for authentication
   def index
-    # @card = Card.all.first
-    # @cards = Card.all
-    # @next = Card.last
     @cards = Card.all
     @card = Card.all.first
-
+    # @cards = []
+    # @cards << Card.all
+    # @cards = @cards.flatten
+    # @cards.each
+    # @card = @cards.shift
+    # @next = @cards.first
   end
 
   def show
@@ -29,23 +31,16 @@ class CardsController < ApplicationController
 
   def destroy
     @card = Card.find(params[:id])
-    @card.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(posts_url) }
-      format.xml  { head :ok }
-    end
+    @card.destroy
+    flash[:notice] = "Card deleted"
   end
 
-  # def update
-  #   # @card = Card.find(params[:post_id])
-  #   # @comment = Comment.find(params[:id])
-  #   # if @comment.update_attributes(params[:comment])
-  #   #   redirect_to post_comment_url(@card, @comment)
-  #   # else
-  #   #   render :action => "edit"
-  #   # end
-  # end
+  def update
+    @card = Card.find(params[params[:id]])
+    @card.update!(card_params)
+    redirect_to @card
+  end
 
   private
 
