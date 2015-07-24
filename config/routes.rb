@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :decks do
-    resources :cards
+    resources :cards, only: [:index, :show, :destroy]
   end
 
-  # get 'cards/:id' => 'cards#show'
 
 end

@@ -8,6 +8,10 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  def flip
+    @card = Card.find(params[:id])
+  end
+
   def new
     @card = Card.new
   end
@@ -32,15 +36,15 @@ class CardsController < ApplicationController
     end
   end
 
-  # def update
-  #   # @card = Card.find(params[:post_id])
-  #   # @comment = Comment.find(params[:id])
-  #   # if @comment.update_attributes(params[:comment])
-  #   #   redirect_to post_comment_url(@card, @comment)
-  #   # else
-  #   #   render :action => "edit"
-  #   # end
-  # end
+  def update
+    @card = Card.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    if @comment.update_attributes(params[:comment])
+      redirect_to post_comment_url(@card, @comment)
+    else
+      render :action => "edit"
+    end
+  end
 
   private
 

@@ -11,9 +11,12 @@
   </div>
 </div>
 
+<h1> My decks </h1>
 
 <div id="front_page_container" class="medium-8 medium-centered text-center columns">
   <div class="row">
-    < Decks >
+    <% @decks.each do |deck| %>
+    <ul> <%= link_to deck.name, deck_card_path(deck.id, 1) %> </ul>
+    <% end %>
   </div>
 </div>

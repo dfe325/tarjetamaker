@@ -11,11 +11,11 @@
 #3 = verb
 #4 = adverb
 
-# Card.create!(front: "el perro", back: "the dog", deck_id: 2)
-# Card.create!(front: "grande", back: "big", deck_id: 1)
-# Card.create!(front: "llegar", back: "to arrive", deck_id: 3)
-# Card.create!(front: "ella", back: "she", deck_id: 1)
-# Card.create!(front: "rápido", back: "quickly", deck_id: 4)
+Card.create!(front: "el perro", back: "the dog", deck_id: 2)
+Card.create!(front: "grande", back: "big", deck_id: 1)
+Card.create!(front: "llegar", back: "to arrive", deck_id: 3)
+Card.create!(front: "ella", back: "she", deck_id: 1)
+Card.create!(front: "rápido", back: "quickly", deck_id: 4)
 
 Deck.create!(name: "adjectives", user_id: 1)
 Deck.create!(name: "nouns", user_id: 1)
