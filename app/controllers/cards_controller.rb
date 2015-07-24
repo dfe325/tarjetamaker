@@ -29,21 +29,11 @@ class CardsController < ApplicationController
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(posts_url) }
-      format.xml  { head :ok }
-    end
+    flash[:notice] = "Card successfully destroyed."
+    redirect_to deck_card_path(@deck.id, params[:id])
   end
 
   def update
-    @card = Card.find(params[:post_id])
-    @comment = Comment.find(params[:id])
-    if @comment.update_attributes(params[:comment])
-      redirect_to post_comment_url(@card, @comment)
-    else
-      render :action => "edit"
-    end
   end
 
   private
