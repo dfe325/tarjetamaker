@@ -11,14 +11,6 @@
   </div>
 </div>
 
-<br> <br> <%= button_tag(type: 'button') do %>
-
-    <ul><%= link_to 'New Card', cards_path(@card.next) %></ul>
-
-    <ul> <%= content_tag(:strong,'New Card') %> </ul>
-
-<% end %>
-
 <div id="box-container">
 
     <br> <br> <%= button_tag(type: 'button') do %>
@@ -34,8 +26,25 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'Delete Card', cards_path(@card.delete) %></ul>
+    <ul><%= link_to 'Delete Card', card_path(@card), method: :delete %></ul>
 
     <ul> <%= content_tag(:strong,'Delete Card') %> </ul>
+
+<% end %>
+
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+    <ul><%= link_to 'Next Card', cards_path(@card.next) %></ul>
+
+    <ul> <%= content_tag(:strong,'Next Card') %> </ul>
+
+<% end %>
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+    <ul><%= link_to 'Create New Card', new_card_path %></ul>
+
+    <ul> <%= content_tag(:strong,'Create New Card') %> </ul>
 
 <% end %>

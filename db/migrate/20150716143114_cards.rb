@@ -1,9 +1,9 @@
 class Cards < ActiveRecord::Migration
   def change
     create_table :cards do |t|
-      t.string :word_text, null: false
-      t.string :meaning_text, null: false
-      t.integer :user_id, null: false
+      t.string :front, null: false
+      t.string :back, null: false
+      t.integer :deck_id, null: false
     end
   end
 end

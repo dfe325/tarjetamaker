@@ -8,14 +8,14 @@
 </head>
 <body>
 
-  <nav class="top-bar">
+  <nav class="top-bar clearfix">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">TarjetaMaker</a></h1>
+        <!-- <li><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTAgUQt8lqcmYHYBtrn7n31ojSvwZD9_TlWCKuwBEkVEV_4rM_VgF6gAg">
+            <section class="top-bar-section"> </li> -->
       </li>
     </ul>
-
-    <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
