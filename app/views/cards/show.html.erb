@@ -44,7 +44,7 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'Next Card', deck_card_path %></ul>
+    <ul><%= link_to 'Next Card', deck_card_path(:deck_id, @card.next) %></ul>
 
     <ul> <%= content_tag(:strong,'Next Card') %> </ul>
 
