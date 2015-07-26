@@ -12,13 +12,17 @@
 </div>
 
 <%= form_for @card do |f| %>
-       <%= f.label :word_text %>
-       <%= f.text_field :word_text %>
+       <%= f.label :front %>
+       <%= f.text_field :front %>
 
-      <%= f.label :meaning_text %>
-      <%= f.text_field :meaning_text %>
+      <%= f.label :back %>
+      <%= f.text_field :back %>
 
     <%= f.submit "Create" %>
 <% end %>
+
+<% else %>
+
+  <%= "You must be signed in." %>
 
 <% end %>

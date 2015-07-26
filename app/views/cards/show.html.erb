@@ -46,13 +46,13 @@
 
     <ul><%= link_to 'Next Card' %></ul>
 
-    <ul> <%= content_tag(:strong,'Next Card') %> </ul>
+    <ul> <%= content_tag(:strong,'Next Card', deck_card_path %> </ul>
 
 <% end %>
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'Create New Card' %></ul>
+    <ul><%= link_to 'Create New Card', new_deck_card_path %></ul>
 
     <ul> <%= content_tag(:strong,'Create New Card') %> </ul>
 

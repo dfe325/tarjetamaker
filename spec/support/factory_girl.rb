@@ -8,9 +8,9 @@ FactoryGirl.define do
   end
 
   factory :card do
-    word_text "el perro"
-    meaning_text "the dog"
-    user
+    front "el perro"
+    back "the dog"
+    deck_id 2
   end
 
 end
