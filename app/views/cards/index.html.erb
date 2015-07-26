@@ -17,7 +17,6 @@
 
     <h1 style="color:yellow"> <%= @card.back %>
     <ul><%= link_to 'Tap to flip card', deck_card_path(@card, @card.id) %></ul>
-
     <ul> <%= content_tag(:strong,'Tap to flip the card') %> </ul>
 
     <% end %></h1>
