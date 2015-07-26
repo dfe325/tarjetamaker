@@ -26,7 +26,7 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     @card.destroy
     flash[:notice] = "Card successfully destroyed."
-    redirect_to deck_card_path(@deck.id, params[:id])
+    redirect_to deck_card_path(:deck_id, @card.next)
   end
 
   def update
