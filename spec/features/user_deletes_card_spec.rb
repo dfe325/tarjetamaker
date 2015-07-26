@@ -1,4 +1,7 @@
+require 'coveralls'
+Coveralls.wear!('rails')
 require 'rails_helper'
+
 
 feature 'user deletes a review', %{
   As a user

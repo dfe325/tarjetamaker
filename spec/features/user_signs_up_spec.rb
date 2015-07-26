@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!('rails')
+
 # require 'rails_helper'
 #
 # feature 'user registers', %Q{

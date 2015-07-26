@@ -56,6 +56,9 @@ gem "rb-readline", group: [:development, :test], :require => false
 
 ruby '2.0.0'
 
+group :test do
+  gem 'coveralls', require: false
+end
 
 group :production do
   gem 'rails_12factor'

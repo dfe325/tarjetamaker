@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'coveralls'
+Coveralls.wear!('rails')
 
 feature 'user signs in', %Q{
   As a signed up user
