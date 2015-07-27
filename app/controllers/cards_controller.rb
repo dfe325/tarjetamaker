@@ -2,6 +2,11 @@ class CardsController < ApplicationController
   def index
     @cards = Card.all
     @card = Card.first
+    # respond_to do |format|
+    #   format.html
+    #   format.xml  { render :xml => @users }
+    #   format.json { render :json => @users }
+    # end
   end
 
   def show
@@ -42,6 +47,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:word_text, :meaning_text)
+    params.require(:card).permit(:front, :flip)
   end
 end

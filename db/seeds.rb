@@ -1,54 +1,19 @@
-Card.create!(front: "el perro", back: "the dog", deck_id: 2)
-Card.create!(front: "grande", back: "big", deck_id: 1)
-Card.create!(front: "llegar", back: "to arrive", deck_id: 3)
-Card.create!(front: "ella", back: "she", deck_id: 1)
-Card.create!(front: "rápido", back: "quickly", deck_id: 4)
+require 'csv'
 
-Deck.create!(name: "adjectives", user_id: 1)
-Deck.create!(name: "nouns", user_id: 1)
-Deck.create!(name: "verbs", user_id: 1)
-Deck.create!(name: "adverbs", user_id: 1)
+file = File.read("spanish-english-seed-file.csv")
+csv = CSV.parse(file, headers: true, header_converters: :symbol)
+count = 0
 
+csv.each do |row|
+  id = row[:id]
+  front = row[:front]
+  flip = row[:flip]
+  deck_id = row[:deck_id].to_i
+  puts "Creating id with integer -- #{id}"
+  puts "Creating front with text of -- #{front}"
+  puts "Creating flip side with text of -- #{flip}"
+  puts "Creating deck_id with integer -- #{deck_id}"
 
-# Card.create(front: "poco", back: "a little", user_id: 1)
-# Card.create(front: "hola", back: "hello", user_id: 1)
-# Card.create(front: "yo", back: "I", user_id: 1)
-# Card.create(front: "tú", back: "you", user_id: 1)
-# Card.create(front: "él", back: "he", user_id: 1)
-# Card.create(front: "ellos", back: "they", user_id: 1)
-# Card.create(front: "nosotros", back: "we", user_id: 1)
-# Card.create(front: "vosotros", back: "you all", user_id: 1)
-# Card.create(front: "nuevo", back: "new", user_id: 1)
-# Card.create(front: "viejo", back: "old", user_id: 1)
-# Card.create(front: "ser", back: "to be", user_id: 1)
-# Card.create(front: "estar", back: "to be", user_id: 1)
-# Card.create(front: "dar", back: "to give", user_id: 1)
-# Card.create(front: "tomar", back: "to take", user_id: 1)
-# Card.create(front: "mucho", back: "a lot", user_id: 1)
-# Card.create(front: "comida", back: "food", user_id: 1)
-# Card.create(front: "mal", back: "bad", user_id: 1)
-# Card.create(front: "el gato", back: "the cat", user_id: 1)
-# Card.create(front: "el pájaro", back: "the bird", user_id: 1)
-
-# Card.create(word_text: "el perro", meaning_text: "the dog", user_id: 1)
-# Card.create(word_text: "chevre", meaning_text: "cool", user_id: 1)
-# Card.create(word_text: "llegar", meaning_text: "to arrive", user_id: 1)
-# Card.create(word_text: "ella", meaning_text: "she", user_id: 1)
-# Card.create(word_text: "mucho", meaning_text: "a lot", user_id: 1)
-# Card.create(word_text: "bueno", meaning_text: "good", user_id: 1)
-# Card.create(word_text: "tanto", meaning_text: "so much/so many", user_id: 1)
-# Card.create(word_text: "buena suerte", meaning_text: "good luck", user_id: 1)
-# Card.create(word_text: "tener", meaning_text: "to have", user_id: 1)
-# Card.create(word_text: "por supuesto", meaning_text: "of course", user_id: 1)
-# Card.create(word_text: "gracias", meaning_text: "thank you", user_id: 1)
-# Card.create(word_text: "orgullo", meaning_text: "pride", user_id: 1)
-# Card.create(word_text: "nubios", meaning_text: "clouds", user_id: 1)
-# Card.create(word_text: "la muchacha", meaning_text: "girl", user_id: 1)
-# Card.create(word_text: "la cucaracha", meaning_text: "cockaroach", user_id: 1)
-# Card.create(word_text: "de todos modos", meaning_text: "anyway", user_id: 1)
-# Card.create(word_text: "de vez en cuando", meaning_text: "from time to time", user_id: 1)
-# Card.create(word_text: "tal vez", meaning_text: "perhaps", user_id: 1)
-# Card.create(word_text: "¿qué tal?", meaning_text: "what's up?", user_id: 1)
-# Card.create(word_text: "¿como te va?", meaning_text: "how's it going?", user_id: 1)
-# Card.create(word_text: "a mí, me encanta...", meaning_text: "I love...", user_id: 1)
-# Card.create(word_text: "loco", meaning_text: "crazy", user_id: 1)
+  card = Card.find_or_create_by!(id: id, front: front, flip: flip, deck_id: deck_id)
+  card.save!
+end

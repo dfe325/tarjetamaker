@@ -13,7 +13,7 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-<h1 style="color:yellow"> <%= @card.back %>
+<h1 style="color:yellow"> <%= @card.flip %>
 
 <ul><%= link_to 'Go Back', :back %></ul>
 
@@ -43,7 +43,7 @@
 
 <br> <br> <%= button_tag(type: 'button') do %>
 
-    <ul><%= link_to 'Next Card', deck_card_path(:deck_id, @card.next) %></ul>
+    <ul><%= link_to 'Next Card', deck_card_path(:deck_id, @card.next)  %></ul>
 
     <ul> <%= content_tag(:strong,'Next Card') %> </ul>
 

@@ -18,13 +18,12 @@ ActiveRecord::Schema.define(version: 20150724001030) do
 
   create_table "cards", force: :cascade do |t|
     t.string  "front",   null: false
-    t.string  "back",    null: false
+    t.string  "flip",    null: false
     t.integer "deck_id", null: false
   end
 
   create_table "decks", force: :cascade do |t|
     t.string  "name",    null: false
-    t.string  "card"
     t.integer "user_id", null: false
   end
 
