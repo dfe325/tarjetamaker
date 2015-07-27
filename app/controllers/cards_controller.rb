@@ -1,11 +1,7 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.all
-    if @card.nil?
-      @card = Card.first
-    else
-      @card = Card.next
-    end
+    @card = Card.first
   end
 
   def show
