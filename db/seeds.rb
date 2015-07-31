@@ -8,8 +8,6 @@ csv.each do |row|
   front = row[:front]
   flip = row[:flip]
   deck_id = row[:deck_id].to_i
-  # name = row[:name]
-  # user_id = row[:user_id]
 
   puts "Creating id with integer -- #{id}"
   puts "Creating front with text of -- #{front}"
@@ -18,8 +16,6 @@ csv.each do |row|
 
   card = Card.find_or_create_by!(id: id, front: front, flip: flip, deck_id: deck_id)
   card.save!
-
-  # puts "Creating deck with name of -- #{name} and user_id of -- #{user_id}"
 
   deck1 = Deck.find_or_create_by!(id: 1, name: "adjectives", user_id: 1)
   deck2 = Deck.find_or_create_by!(id: 2, name: "nouns", user_id: 1)

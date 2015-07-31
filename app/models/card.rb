@@ -10,6 +10,4 @@ class Card < ActiveRecord::Base
     next_card = Card.all.first if next_card.blank?
     next_card
   end
-
-
 end

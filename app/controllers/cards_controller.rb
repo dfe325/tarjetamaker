@@ -1,7 +1,6 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.all
-    @card = params[:id]
     # respond_to do |format|
     #   format.html
     #   format.xml  { render :xml => @users }

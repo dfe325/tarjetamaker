@@ -16,7 +16,7 @@
 <div id="front_page_container" class="medium-8 medium-centered text-center columns">
   <div class="row">
     <% @decks.each do |deck| %>
-    <ul> <%= link_to deck.name, deck_card_path(deck.id, 1) %> </ul>
+    <ul> <%= link_to deck.name, deck_cards_path(deck.id, 1) %> </ul>
     <% end %>
   </div>
 </div>

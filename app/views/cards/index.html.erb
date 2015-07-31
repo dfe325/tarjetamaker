@@ -3,22 +3,51 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/foundation_and_overrides.scss">
 </head>
 
-<div class="medium-6 medium-centered columns float right">
-  </div>
-
 <div id="front_page_container" class="medium-8 medium-centered text-center columns">
+
   <div class="row">
   </div>
 </div>
 
 <div id="box-container">
 
-    <br> <br> <%= button_tag(type: 'button') do %>
 
-    <h1 style="color:yellow"> <%= @card.flip %>
-    <ul><%= link_to 'Tap to flip card', deck_card_path(@card, @card.id) %></ul>
-    <ul> <%= content_tag(:strong,'Tap to flip the card') %> </ul>
-
-    <% end %></h1>
 
 </div>
+
+<div id="box-container">
+
+    <br> <br> <%= button_tag(type: 'button') do %>
+    <% @cards.each do |card| %>
+    <h1 style="color:yellow"> <%= card.front %>
+    <ul><%= link_to 'Tap to flip card', deck_card_path(:deck_id, card.id) %></ul>
+    <ul> <%= content_tag(:strong,'Tap to flip the card') %> </ul>
+
+    <% end %>
+
+    <% end %>
+</div>
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+    <ul><%= link_to 'Delete Card', deck_card_path(card.id, params[:id]), method: :delete %></ul>
+
+    <ul> <%= content_tag(:strong,'Delete Card') %> </ul>
+
+<% end %>
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+    <ul><%= link_to 'Next Card', deck_card_path(:deck_id, @card.next)  %></ul>
+
+    <ul> <%= content_tag(:strong,'Next Card') %> </ul>
+
+<% end %>
+
+<br> <br> <%= button_tag(type: 'button') do %>
+
+    <ul><%= link_to 'Create New Card', new_deck_card_path %></ul>
+
+    <ul> <%= content_tag(:strong,'Create New Card') %> </ul>
+
+<% end %>
